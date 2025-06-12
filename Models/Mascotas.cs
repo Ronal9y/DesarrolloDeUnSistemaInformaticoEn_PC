@@ -1,0 +1,58 @@
+﻿  using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+
+namespace DesarrolloDeUnSistemaInformaticoEn_PC.Models
+{
+ 
+    public class Mascota
+    {
+        [Key]
+        public int MascotaId { get; set; }
+
+        [Required]
+        public int CategoriaId { get; set; }
+
+        [Required]
+        public int RazaId { get; set; }
+
+        [Required]
+        public int RelacionSizeId { get; set; }
+
+        [Required(ErrorMessage = "El tamaño es obligatorio.")]
+        public string Tamaño { get; set; }
+
+
+        [Required(ErrorMessage = "El nombre es obligatorio.")]
+        [StringLength(100, ErrorMessage = "El nombre no puede exceder los 100 caracteres.")]
+        public string Nombre { get; set; }
+
+        [Required(ErrorMessage = "La fecha de nacimiento es obligatoria.")]
+        public DateTime FechaNacimiento { get; set; }
+
+        [Required(ErrorMessage = "La descricion es obligatoria.")]
+
+        public string Descripcion { get; set; }
+
+        [Required(ErrorMessage = "La foto es obligatoria.")]
+
+        public string FotoURL { get; set; }
+
+        [Required]
+        public int EstadoId { get; set; }
+
+        [ForeignKey("CategoriaId")]
+        public Categoria Categoria { get; set; }
+
+        [ForeignKey("RazaId")]
+        public Raza Raza { get; set; }
+
+        [ForeignKey("RelacionSizeId")]
+        public RelacionSize RelacionSize { get; set; }
+
+        [ForeignKey("EstadoId")]
+        public Estado Estado { get; set; }
+
+
+    }
+
+}
