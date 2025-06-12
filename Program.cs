@@ -1,9 +1,10 @@
-using Microsoft.AspNetCore.Components.Authorization;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using DesarrolloDeUnSistemaInformaticoEn_PC.Components;
-using DesarrolloDeUnSistemaInformaticoEn_PC.Components.Account;
-using DesarrolloDeUnSistemaInformaticoEn_PC.Data;
+global using Microsoft.AspNetCore.Components.Authorization;
+global using Microsoft.AspNetCore.Identity;
+global using Microsoft.EntityFrameworkCore;
+global using DesarrolloDeUnSistemaInformaticoEn_PC.Components;
+global using DesarrolloDeUnSistemaInformaticoEn_PC.Components.Account;
+global using DesarrolloDeUnSistemaInformaticoEn_PC.Data;
+global using DesarrolloDeUnSistemaInformaticoEn_PC.Models;
 
 namespace DesarrolloDeUnSistemaInformaticoEn_PC;
 
@@ -23,6 +24,12 @@ public class Program
         builder.Services.AddScoped<AuthenticationStateProvider, IdentityRevalidatingAuthenticationStateProvider>();
 
         builder.Services.AddBlazorBootstrap();
+
+
+
+        var ConStr = builder.Configuration.GetConnectionString("SqlConStr");
+        builder.Services.AddDbContextFactory<ApplicationDbContext>(o => o.UseSqlServer(ConStr));
+
 
         builder.Services.AddAuthentication(options =>
             {
