@@ -20,16 +20,16 @@
         [Required(ErrorMessage = "Debe seleccionar el estado de la mascota.")]
         public int EstadoMascotaId { get; set; }
 
-        public string Observaciones { get; set; }
+        public string Observaciones { get; set; } = string.Empty;
 
         [ForeignKey("MascotaId")]
-        public Mascota Mascota { get; set; }
+        public Mascota Mascota { get; set; } = null!;
 
         [ForeignKey("AdoptanteId")]
-        public Adoptante Adoptante { get; set; }
+        public Adoptante Adoptante { get; set; } = null!;
 
         [ForeignKey("EstadoMascotaId")]
-        public EstadoMascota EstadoMascota { get; set; }
+        public EstadoMascota EstadoMascota { get; set; } = null!;
     }
 
 }

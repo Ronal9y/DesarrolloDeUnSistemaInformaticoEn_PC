@@ -19,39 +19,38 @@ namespace DesarrolloDeUnSistemaInformaticoEn_PC.Models
         public int RelacionSizeId { get; set; }
 
         [Required(ErrorMessage = "El tamaño es obligatorio.")]
-        public string Tamaño { get; set; }
+        public string Tamaño { get; set; } = string.Empty;
 
 
         [Required(ErrorMessage = "El nombre es obligatorio.")]
         [StringLength(100, ErrorMessage = "El nombre no puede exceder los 100 caracteres.")]
-        public string Nombre { get; set; }
+        public string Nombre { get; set; } = string.Empty;
 
         [Required(ErrorMessage = "La fecha de nacimiento es obligatoria.")]
         public DateTime FechaNacimiento { get; set; }
 
         [Required(ErrorMessage = "La descricion es obligatoria.")]
 
-        public string Descripcion { get; set; }
+        public string Descripcion { get; set; } = string.Empty;
 
         [Required(ErrorMessage = "La foto es obligatoria.")]
 
-        public string FotoURL { get; set; }
+        public string FotoURL { get; set; } = string.Empty;
 
         [Required]
         public int EstadoId { get; set; }
 
         [ForeignKey("CategoriaId")]
-        public Categoria Categoria { get; set; }
+        public Categoria Categoria { get; set; } = null!;
 
         [ForeignKey("RazaId")]
-        public Raza Raza { get; set; }
+        public Raza Raza { get; set; } = null!;
 
         [ForeignKey("RelacionSizeId")]
-        public RelacionSize RelacionSize { get; set; }
+        public RelacionSize RelacionSize { get; set; } = null!;
 
         [ForeignKey("EstadoId")]
-        public Estado Estado { get; set; }
-
+        public Estado Estado { get; set; } = null!;
 
     }
 

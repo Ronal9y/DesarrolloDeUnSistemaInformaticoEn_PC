@@ -17,12 +17,12 @@ namespace DesarrolloDeUnSistemaInformaticoEn_PC.Models
         [Required(ErrorMessage = "Debe ingresar la fecha de adopción.")]
         public DateTime FechaAdopcion { get; set; } = DateTime.Now;
 
-        public string Notas { get; set; }
+        public string Notas { get; set; } = string.Empty;
 
         [ForeignKey("AdoptanteId")]
-        public Adoptante Adoptante { get; set; }
+        public Adoptante Adoptante { get; set; } = null!;
 
         [ForeignKey("MascotaId")]
-        public Mascota Mascota { get; set; }
+        public Mascota Mascota { get; set; } = null!;
     }
 }

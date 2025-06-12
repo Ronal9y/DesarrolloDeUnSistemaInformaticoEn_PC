@@ -8,8 +8,8 @@ namespace DesarrolloDeUnSistemaInformaticoEn_PC.Models
         public int EstadoMascotaId { get; set; }
 
         [Required(ErrorMessage = "El nombre del estado es obligatorio.")]
-        public string Nombre { get; set; }
+        public string Nombre { get; set; } = string.Empty;
 
-        public ICollection<SeguimientoMascota> Seguimientos { get; set; }
+        public virtual ICollection<SeguimientoMascota> Seguimientos { get; set; } = null!;
     }
 }

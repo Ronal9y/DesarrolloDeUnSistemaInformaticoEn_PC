@@ -22,12 +22,12 @@ namespace DesarrolloDeUnSistemaInformaticoEn_PC.Models
         public int MascotaId { get; set; }
 
         [ForeignKey("AdoptanteId")]
-        public Adoptante Adoptante { get; set; }
+        public Adoptante Adoptante { get; set; } = null!;
 
         [ForeignKey("EstadoSolicitudId")]
-        public EstadoSolicitud EstadoSolicitud { get; set; }
+        public EstadoSolicitud EstadoSolicitud { get; set; } = null!;
 
         [ForeignKey("MascotaId")]
-        public Mascota Mascota { get; set; }
+        public Mascota Mascota { get; set; } = null!;
     }
 }

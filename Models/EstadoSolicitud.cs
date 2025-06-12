@@ -8,8 +8,8 @@ namespace DesarrolloDeUnSistemaInformaticoEn_PC.Models
         public int EstadoSolicitudId { get; set; }
 
         [Required(ErrorMessage = "El nombre del estado de la solicitud es obligatorio.")]
-        public string Nombre { get; set; }
+        public string Nombre { get; set; } = string.Empty;
 
-        public ICollection<SolicitudAdopcion> Solicitudes { get; set; }
+        public virtual ICollection<SolicitudAdopcion> Solicitudes { get; set; } = null!;
     }
 }

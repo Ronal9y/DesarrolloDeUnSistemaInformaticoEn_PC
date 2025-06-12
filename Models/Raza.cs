@@ -14,13 +14,10 @@ namespace DesarrolloDeUnSistemaInformaticoEn_PC.Models
 
         [Required(ErrorMessage = "El nombre es obligatorio.")]
         [StringLength(100, ErrorMessage = "El nombre no puede exceder los 100 caracteres.")]
-        public string Nombre { get; set; }
+        public string Nombre { get; set; } = string.Empty;
 
         [ForeignKey("CategoriaId")]
-        public Categoria Categoria { get; set; }
-
-
-
+        public Categoria Categoria { get; set; } = null!;
 
     }
 }

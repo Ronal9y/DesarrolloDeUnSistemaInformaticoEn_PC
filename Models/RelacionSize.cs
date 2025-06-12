@@ -11,8 +11,8 @@ namespace DesarrolloDeUnSistemaInformaticoEn_PC.Models
 
         [Required(ErrorMessage = "El nombre del tamaño obligatorio.")]
         [StringLength(100, ErrorMessage = "El nombre no puede exceder los 100 caracteres.")]
-        public string Nombre { get; set; }
+        public string Nombre { get; set; } = string.Empty;
 
-        public ICollection<Mascota> Mascotas { get; set; }
+        public virtual ICollection<Mascota> Mascotas { get; set; } = null!;
     }
 }
