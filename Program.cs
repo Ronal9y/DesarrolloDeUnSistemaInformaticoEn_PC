@@ -25,11 +25,8 @@ public class Program
 
         builder.Services.AddBlazorBootstrap();
 
-
-
-        var ConStr = builder.Configuration.GetConnectionString("SqlConStr");
-        builder.Services.AddDbContextFactory<ApplicationDbContext>(o => o.UseSqlServer(ConStr));
-
+        //var ConStr = builder.Configuration.GetConnectionString("SqlConStr");
+        //builder.Services.AddDbContextFactory<ApplicationDbContext>(o => o.UseSqlServer(ConStr));
 
         builder.Services.AddAuthentication(options =>
             {
@@ -39,7 +36,7 @@ public class Program
             .AddIdentityCookies();
 
         var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
-        builder.Services.AddDbContext<ApplicationDbContext>(options =>
+        builder.Services.AddDbContextFactory<ApplicationDbContext>(options =>
             options.UseSqlServer(connectionString));
         builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
