@@ -9,8 +9,6 @@ namespace DesarrolloDeUnSistemaInformaticoEn_PC.Models
         [Key]
         public int MascotaId { get; set; }
 
-        [Required]
-        public int CategoriaId { get; set; }
 
         [Required]
         public int RazaId { get; set; }
@@ -39,9 +37,6 @@ namespace DesarrolloDeUnSistemaInformaticoEn_PC.Models
 
         [Required]
         public int EstadoId { get; set; }
-
-        [ForeignKey("CategoriaId")]
-        public Categoria Categoria { get; set; } = null!;
 
         [ForeignKey("RazaId")]
         public Raza Raza { get; set; } = null!;
